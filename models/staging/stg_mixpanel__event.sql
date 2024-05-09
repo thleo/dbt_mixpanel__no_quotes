@@ -18,14 +18,14 @@ fields as (
         -- pulls default properties and renames (see macros/staging_columns)
         -- columns missing from your source table will be completely NULL   
         {{
-            fivetran_utils.fill_staging_columns(
+            fivetran_utils__no_quotes.fill_staging_columns(
                 source_columns=adapter.get_columns_in_relation(source('mixpanel', 'event')),
                 staging_columns=get_event_columns()
             )
         }}
 
         -- custom properties as specified in your dbt_project.yml
-        {{ fivetran_utils.fill_pass_through_columns('event_custom_columns') }}
+        {{ fivetran_utils__no_quotes.fill_pass_through_columns('event_custom_columns') }}
         
     from events
 
