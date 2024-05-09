@@ -1,3 +1,4 @@
 packages:
-- package: fivetran/fivetran_utils
-  version: [">=0.4.0", "<0.5.0"]
+- git: "https://github.com/thleo/dbt_fivetran_utils__no_quotes.git" # git URL
+  revision: 34722549847a7eb6be1d2a97c0eb358167a0e249
+  name: fivetran_utils__no_quotes
